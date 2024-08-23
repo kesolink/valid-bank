@@ -1,0 +1,162 @@
+@import "../../mixins.scss";
+
+
+
+.navbar {
+  align-items: center;
+  background: linear-gradient(52.21deg, #19163b 46.97%, #4c09a2 156.47%);
+  background: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  @include respond(phone) {
+ 
+  }
+
+  }
+ 
+  
+ 
+  
+
+  .links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+ 
+
+  .side-nav {
+    z-index: 1000;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 80%;
+    height: 100%;
+    background-color: var(--tg-primary-purple-color);
+    backdrop-filter: blur(10px);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+    color: white;
+    @include respond(desktop) {
+      display: none;
+    }
+    @include respond(tab) {
+      width: 30%;
+    }
+
+    ul {
+      padding: 1rem /* 16px */;
+      color: white;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+    li {
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     padding: 10px 10px;
+     &:hover {
+        border-radius: 8px;
+        background-color: #7000F6; /* Lightens the background on hover */
+        color:#fff; /* Changes the text color on hover */
+        cursor: pointer; /* Changes the cursor to indicate interactivity */
+      }
+    }
+  }
+  .wrap-nav-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-logout-wrap{
+    display: flex;
+     align-items: center;
+     gap: 5px;
+     padding: 10px 10px;
+  }
+ 
+ 
+  .side-nav-else {
+    position: fixed;
+    left: -100%;
+  }
+ 
+
+  
+
+
+
+.close-nav{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 18px;
+  
+}
+
+
+
+
+
+
+
+
+
+// **************************new*****************************
+.nav-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.nav-logo{
+    @include respond(phone) {
+        display: none;
+      }
+}
+.navicon{
+    display: none;
+    @include respond(phone) {
+        display: block;
+      }
+}
+.profile-wrap{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    span{
+        @include respond(phone) {
+            display: none;
+          }
+    }
+}
+.question-nav{
+    @include respond(phone) {
+        display: none;
+      }
+}
+.down-nav{
+    @include respond(phone) {
+        display: none;
+      }
+}
+

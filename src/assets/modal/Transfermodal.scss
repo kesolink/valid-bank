@@ -1,0 +1,103 @@
+@import "../../mixins.scss";
+.fadded-container{
+  position: relative;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .6);
+  width: 100%;
+  height: 100%;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    @include respond(phone) {
+      align-items: end;
+    }
+  }
+  
+  .modal {
+    width: 30%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tg-primary-light-purple-color);
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    @include respond(phone) {
+      width: 100%;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+  }
+
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+
+  .transfer-input-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17px;
+    margin-top: 10px;
+    label {
+      //   font-family: Plus Jakarta Sans;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+    input {
+        width: 320px;
+        height:40px ;
+        padding: 10px;
+  
+        border-radius: 5px;
+        border: 1px grey solid;
+        opacity: 0px;
+        outline: none;
+      }
+  }
+.transfer-form-wrap{
+  button{
+    width: 100%;
+    height: 40px;
+    background-color: var(--tg-primary-purple-color);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+  }
+}
+.balance-wrap{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  h3{
+    font-size: 12px;
+  }
+  span{
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+
+
+  .open {
+    display: flex;
+  }

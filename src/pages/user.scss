@@ -1,0 +1,37 @@
+@import "../mixins.scss";
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0px 30px;
+
+  }
+  thead{
+    background-color: #F9FAFB;
+  }  
+th,td {
+    padding: 8px;
+    text-align: left;
+    padding-left: 26px;
+    padding-right: 26px;
+    // @include respond(phone) {
+    //   padding-left: 7px;
+    //   padding-right: 7px;
+    // }
+  }
+  
+th {
+    font-weight: bold;
+    @include respond(phone) {
+      font-size: 12px;
+    }
+  }
+tbody{
+    @include respond(phone) {
+      font-size: 12px;
+    }
+  }
+td{
+    border-right: 2px solid #F9FAFB;
+    border-bottom: 2px solid #F9FAFB;
+    font-size: 14px;
+  }

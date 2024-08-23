@@ -1,0 +1,30 @@
+@import "./mixins.scss";
+.continer{
+    display: flex;
+}
+.side-left-nav{
+    width: 20%;
+    height: 100vh;
+    @include respond(phone) {
+        display: none;
+      }
+}
+.main-container{
+    width: 75%;
+    @include respond(phone) {
+        width: 100%;
+      }
+
+}
+.auth{
+    width: 75%;
+    @include respond(phone) {
+        width: 100%;
+      }
+}
+.main{
+    width: 100%;
+    @include respond(phone) {
+        width: 100%;
+      }
+}

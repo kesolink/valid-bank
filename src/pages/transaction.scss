@@ -1,0 +1,225 @@
+@import "../mixins.scss";
+.transaction-container{
+    padding: 20px 50px;
+    @include respond(phone) {
+      padding: 5px 10px;
+    }
+}
+.tran-header-wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+}
+
+// @include respond(phone) {
+//   display: block;
+// }
+.tran-header-text-wrap{
+    h4{
+        font-size: 30px;
+        
+    }
+    p{
+        color: #7F7D83;
+    }
+}
+.add-tran-btn-wrap{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--tg-primary-purple-color);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.tran-figure-wrap{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    @include respond(phone) {
+      margin: 20px 0px;
+      display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  gap: 16px; /* Adds space between boxes */
+    }
+}
+.tran-box{
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F9F9;
+    // background-color: red;
+    padding: 12px;
+    width: 100%;
+    @include respond(phone) {
+      min-width: 250px; /* Adjust this value as needed */
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h3{
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+    span{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    p{
+        font-size: 16px;
+        color: var(--tg-primary-purple-color);
+    }
+}
+
+.tranfer-wrap{
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button{
+    padding: 10px 25px;
+    border-radius: 7px;
+    border: none;
+    background-color: var(--tg-primary-purple-color);
+    color: #fff;
+    font-size: 18px;
+  }
+}
+.copy-acct-num-wrap{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  span{
+    font-weight: 600;
+  }
+}
+.copy{
+  color: var(--tg-primary-purple-color);
+}
+
+.sort-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px;
+    input{
+        width: 300px;
+      height:35px ;
+      padding: 10px;
+
+      border-radius: 5px;
+      border: 1px grey solid;
+      opacity: 0px;
+      outline: none;
+      font-weight: 600;
+      @include respond(phone) {
+        width: 150px;
+      }
+    }
+}
+.sort-right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include respond(phone) {
+      justify-content: space-between;
+    }
+}
+.tran-fillter{
+    display: flex;
+    align-items: center;
+    padding: 7px 7px;
+    border: solid 1px grey;
+    border-radius: 5px;
+    gap: 4px;
+    font-size: 14px;
+}
+.date-fillter{
+  display: flex;
+  align-items: center;
+  padding: 7px 7px;
+  border: solid 1px grey;
+  border-radius: 5px;
+  gap: 4px;
+  font-size: 14px;
+  @include respond(phone) {
+    display: none;
+  }
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0px 30px;
+    // background-color: blue;
+  }
+  thead{
+    background-color: #F9FAFB;
+  }  
+th,td {
+    padding: 8px;
+    text-align: left;
+    // border-bottom: 1px solid;
+    // border-color: rgba(229, 229, 229, 0.1);
+    padding-left: 26px;
+    padding-right: 26px;
+    @include respond(phone) {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+  }
+  
+th {
+    // background-color: #f2f2f2;
+    // border-top: 1px solid;
+    // border-color: rgba(229, 229, 229, 0.1);
+    font-weight: bold;
+    @include respond(phone) {
+      font-size: 12px;
+    }
+  }
+tbody{
+    @include respond(phone) {
+      font-size: 12px;
+    }
+  }
+td{
+    border-right: 2px solid #F9FAFB;
+    border-bottom: 2px solid #F9FAFB;
+    font-size: 14px;
+  }
+  .success-text{
+    background-color: var(--tg-light-green);
+    color: #1ACE37;
+    padding: 3px 5px;
+    border-radius: 12px;
+    font-size: 14px;
+
+  }
+  .action-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    img{
+        width: 30%;
+    }
+  }
+  .reference{
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  .date{
+    @include respond(phone) {
+      display: none;
+    }
+  }
