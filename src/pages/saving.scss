@@ -1,0 +1,18 @@
+.general-text{
+  position: relative; 
+  height: 100vh;
+}
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  h3{
+    font-size: 30px;
+    font-weight: 800;
+
+  }
+   img{
+    width: 130px;
+   }
+}

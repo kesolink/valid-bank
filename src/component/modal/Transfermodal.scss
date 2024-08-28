@@ -33,8 +33,7 @@
     position: relative;
     @include respond(phone) {
       width: 100%;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
+      border-radius: 25px 25px 0px 0px;
     }
   }
 
@@ -100,4 +99,20 @@
 
   .open {
     display: flex;
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+ 
+  .slide-up {
+    animation: slideUp 0.5s ease-out forwards; 
+
   }

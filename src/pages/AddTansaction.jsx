@@ -2,7 +2,7 @@ import { IoClose } from "react-icons/io5";
 import "./addtransaction.scss";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTransactionToHistory } from "../redux/userReducer"; // Import the action
+import { addTransactionToHistory, updateUser } from "../redux/userReducer"; // Import the action
 import axios from "axios"; // Import Axios
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -36,6 +36,11 @@ function AddTransaction({ isOpen, closePage }) {
       return;
     }
 
+    // Calculate the new balance
+    const updatedBalance = transactionDirection === "Debit"
+      ? activeUser.balance - numericAmount
+      : activeUser.balance + numericAmount;
+
     // Create the new transaction object
     const newTransaction = {
       reference: Math.random().toString(36).substr(2, 9),
@@ -54,16 +59,21 @@ function AddTransaction({ isOpen, closePage }) {
       const updatedTransactionHistory = [...user.transactionHisotry, newTransaction];
 
       // Update the user's data on the server
-      await axios.put(`http://localhost:5000/users/${activeUser.id}`, {
+      const updatedUser = {
         ...user,
+        balance: updatedBalance,
         transactionHisotry: updatedTransactionHistory
-      });
+      };
 
-      // Dispatch the action to add the transaction to the Redux store
+      await axios.put(`http://localhost:5000/users/${activeUser.id}`, updatedUser);
+
+      // Dispatch the action to add the transaction to the Redux store and update the balance
       dispatch(addTransactionToHistory({
         id: activeUser.id,
         transaction: newTransaction
       }));
+
+      dispatch(updateUser(updatedUser));
 
       // Clear the form and close the modal
       setFormData({
@@ -71,7 +81,7 @@ function AddTransaction({ isOpen, closePage }) {
         transactionDirection: 'Debit',
         transactionStatus: 'Success'
       });
-      toast.success("Transaction add successfully.");
+      toast.success("Transaction added successfully.");
       closePage();
     } catch (error) {
       console.error("Error saving transaction to server:", error);

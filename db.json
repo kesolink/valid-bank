@@ -3,8 +3,8 @@
     {
       "id": "",
       "email": "kingsleyumune14@gmail.com",
-      "firstName": "wswe",
-      "lastName": "wewe",
+      "firstName": "ola",
+      "lastName": "peter",
       "password": "fwee",
       "accountNumber": "70972138",
       "balance": 40300,
@@ -13,64 +13,18 @@
     {
       "id": "65006556",
       "email": "kingsleyumune14@gmail.com",
-      "firstName": "erahe",
-      "lastName": "erger",
+      "firstName": "toba",
+      "lastName": "james",
       "password": "eerger",
       "accountNumber": "70972142",
-      "balance": 1300,
+      "balance": 906300,
       "transactionHisotry": [
-        {
-          "reference": "jz3nw8991",
-          "amount": 100,
-          "date": "8/19/2024, 11:34:35 PM",
-          "status": "Success",
-          "type": "Credit",
-          "sender": "wtfw wGWW"
-        },
-        {
-          "reference": "1eyst16tw",
-          "amount": 3000,
-          "date": "8/21/2024, 11:35:50 AM",
-          "status": "Success",
-          "type": "Credit"
-        },
         {
           "reference": "k8rvdf199",
           "amount": 1000,
           "date": "8/21/2024, 11:37:00 AM",
           "status": "Failed",
           "type": "Credit"
-        },
-        {
-          "reference": "fl2kl48g2",
-          "amount": 100,
-          "date": "8/21/2024, 11:49:48 AM",
-          "status": "Success",
-          "type": "Credit",
-          "sender": "umune kingsley"
-        },
-        {
-          "reference": "nlr9zxd6i",
-          "amount": 1000,
-          "date": "8/22/2024, 12:02:56 AM",
-          "status": "Failed",
-          "type": "Credit"
-        },
-        {
-          "reference": "lucv4yjoz",
-          "amount": 200,
-          "date": "8/22/2024, 8:04:03 AM",
-          "status": "Success",
-          "type": "Credit",
-          "sender": "erahe erger"
-        },
-        {
-          "reference": "49pdtzi9b",
-          "amount": -100,
-          "date": "8/22/2024, 11:49:24 AM",
-          "status": "Success",
-          "type": "Debit",
-          "recipient": "john mark"
         },
         {
           "reference": "i1mjs84x3",
@@ -87,6 +41,116 @@
           "status": "Success",
           "type": "Credit",
           "sender": "umune kingsley"
+        },
+        {
+          "reference": "6tsy5y0ln",
+          "amount": -1000,
+          "date": "8/27/2024, 10:43:07 PM",
+          "status": "Success",
+          "type": "Debit"
+        },
+        {
+          "reference": "ns4klwobx",
+          "amount": 5000,
+          "date": "8/27/2024, 10:43:35 PM",
+          "status": "Success",
+          "type": "Credit"
+        },
+        {
+          "reference": "rck10xexe",
+          "amount": -1000,
+          "date": "8/27/2024, 10:43:55 PM",
+          "status": "Success",
+          "type": "Debit"
+        },
+        {
+          "reference": "4ndnbjyy1",
+          "amount": -100000,
+          "date": "8/27/2024, 10:44:21 PM",
+          "status": "Success",
+          "type": "Debit"
+        },
+        {
+          "reference": "faurpn0j2",
+          "amount": 1000000,
+          "date": "8/27/2024, 10:44:40 PM",
+          "status": "Success",
+          "type": "Credit"
+        },
+        {
+          "reference": "10atskmze",
+          "amount": 1000,
+          "date": "8/28/2024, 8:17:10 AM",
+          "status": "Success",
+          "type": "Credit"
+        },
+        {
+          "reference": "mm85bxy5u",
+          "amount": 1000,
+          "date": "8/28/2024, 8:17:23 AM",
+          "status": "Success",
+          "type": "Credit"
+        },
+        {
+          "reference": "55uf5o5q6",
+          "amount": 1000,
+          "date": "8/28/2024, 8:17:23 AM",
+          "status": "Success",
+          "type": "Credit"
+        },
+        {
+          "reference": "c6ab7xt5h",
+          "amount": 3000,
+          "date": "8/28/2024, 8:17:33 AM",
+          "status": "Success",
+          "type": "Credit"
+        },
+        {
+          "reference": "hye9hryez",
+          "amount": 1000,
+          "date": "8/28/2024, 10:13:47 AM",
+          "status": "Pending",
+          "type": "Credit"
+        },
+        {
+          "reference": "jfyabgz0u",
+          "amount": 1000,
+          "date": "8/28/2024, 6:46:02 PM",
+          "status": "Success",
+          "type": "Credit",
+          "sender": "toba james"
+        },
+        {
+          "reference": "j70rj9sev",
+          "amount": -1000,
+          "date": "8/28/2024, 6:46:02 PM",
+          "status": "Success",
+          "type": "Debit",
+          "recipient": "toba james"
+        },
+        {
+          "reference": "b6ijtr4t4",
+          "amount": -1000,
+          "date": "8/28/2024, 7:51:53 PM",
+          "status": "Success",
+          "type": "Debit",
+          "recipient": "ola peter"
+        },
+        {
+          "reference": "kjvkewc5z",
+          "amount": -1000,
+          "date": "8/28/2024, 7:53:31 PM",
+          "status": "Success",
+          "type": "Debit",
+          "recipient": "ola peter"
+        },
+        {
+          "reference": "6318lbx8q",
+          "amount": -1000,
+          "date": "8/28/2024, 7:54:03 PM",
+          "status": "Success",
+          "type": "Debit",
+          "recipient": "ola peter"
         }
       ]
     },
@@ -178,8 +242,8 @@
     {
       "id": "36295755",
       "email": "kingsleyumune10@gmail.com",
-      "firstName": "wtfw",
-      "lastName": "wGWW",
+      "firstName": "eze",
+      "lastName": "joy",
       "password": "WEGEGAG",
       "accountNumber": "14345549",
       "balance": 600,
@@ -197,8 +261,8 @@
     {
       "id": "24126727",
       "email": "kingsleyumune10@gmail.com",
-      "firstName": "sdjhRJE",
-      "lastName": "erJJDTED",
+      "firstName": "stephen",
+      "lastName": "grace",
       "password": "DEKEDTKde",
       "accountNumber": "26213079",
       "balance": 6000,

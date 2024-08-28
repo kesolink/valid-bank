@@ -154,38 +154,74 @@
 
 }
 
+// max-height: 200px; 
+// overflow-y: auto;
+
 table {
     width: 100%;
     border-collapse: collapse;
     padding: 0px 30px;
     // background-color: blue;
+    
   }
   thead{
+    // position: fixed;
     background-color: #F9FAFB;
-  }  
+  } 
+  
+  .table-wrap{
+    margin-top: 20px;
+    max-height: 350px; 
+    overflow-y: auto;
+    @include respond(phone) {
+      max-height: 310px; 
+
+    }
+   
+  }
+  .table-wrap th {
+    // background-color: rgb(29 35 43 ); 
+    position: sticky;
+    top: 0; 
+    // z-index: 1; 
+  }
+  .table-wrap::-webkit-scrollbar {
+    display: none;
+  }
 th,td {
     padding: 8px;
     text-align: left;
-    // border-bottom: 1px solid;
-    // border-color: rgba(229, 229, 229, 0.1);
+    border-bottom: 1px solid;
+    border-color: rgba(229, 229, 229, 0.1);
     padding-left: 26px;
     padding-right: 26px;
     @include respond(phone) {
-      padding-left: 7px;
-      padding-right: 7px;
+      padding-left: 0px;
+      padding-right: 0px;
+
+    }
+    @include respond(iphone-12-pro) {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
-  
+  .table-tr{
+  //   width: 100%;       /* Set a fixed width */
+  // height: 0px;      /* Set a fixed height */
+  // overflow-y: scroll; /* Enable vertical scrolling */
+  // overflow-x: hidden;
+  }
 th {
-    // background-color: #f2f2f2;
-    // border-top: 1px solid;
-    // border-color: rgba(229, 229, 229, 0.1);
+    background-color: #f2f2f2;
+    border-top: 1px solid;
+    border-color: rgba(229, 229, 229, 0.1);
     font-weight: bold;
     @include respond(phone) {
       font-size: 12px;
     }
   }
 tbody{
+  
     @include respond(phone) {
       font-size: 12px;
     }
@@ -194,6 +230,9 @@ td{
     border-right: 2px solid #F9FAFB;
     border-bottom: 2px solid #F9FAFB;
     font-size: 14px;
+    @include respond(phone) {
+      font-size: 12px;
+    }
   }
   .success-text{
     background-color: var(--tg-light-green);
@@ -202,6 +241,20 @@ td{
     border-radius: 12px;
     font-size: 14px;
 
+  }
+  .fail-text{
+    background-color:#e944443d ;
+    color: #d13131;
+    padding: 3px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+  .pending-text{
+    background-color:rgba(255, 255, 0, 0.055) ;
+    color: yellow;
+    padding: 3px 14px;
+    border-radius: 12px;
+    font-size: 14px;
   }
   .action-icon{
     display: flex;
@@ -223,3 +276,24 @@ td{
       display: none;
     }
   }
+  .edit{
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  .trash{
+    @include respond(phone) {
+      width: 30px;
+    }
+  }
+
+//   @media only screen and (min-device-width: 390px) and (max-device-width: 390px) 
+// and (min-device-height: 844px) and (max-device-height: 844px) 
+// and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+//   th,td {
+    
+//       padding-left: 7px;
+//       padding-right: 7px;
+   
+//   }
+// }

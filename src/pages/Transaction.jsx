@@ -3,14 +3,15 @@ import { HiOutlinePlusSm, HiOutlineTrash } from "react-icons/hi";
 import Edit from "../../src/assets/image/edit-pen.png";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import AddTransaction from "./AddTansaction";
-import TransferModal from "../assets/modal/TransferModal";
-import { FaRegCopy } from "react-icons/fa6";
-import { removeTransactionFromHistory, updateUser } from "../redux/userReducer";
-import axios from "axios";
+import TransferModal from "../component/modal/TransferModal";
+import { FaRegCopy } from "react-icons/fa";
+// import { removeTransactionFromHistory, updateUser } from "../redux/userReducer";
+// import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import DeleteModal from "../component/modal/DeleteModal";
 
 function Transaction() {
   const [add, setAdd] = useState(false);
@@ -20,9 +21,11 @@ function Transaction() {
   const [searchTerm, setSearchTerm] = useState('');
   const [copySuccess, setCopySuccess] = useState('');
   const [selectFilter, setSelectFilter] = useState("all");
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [transactionToDelete, setTransactionToDelete] = useState(null);
 
   const activeUser = useSelector((state) => state.user.activeUser);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     if (activeUser) {
@@ -44,17 +47,17 @@ function Transaction() {
     setFilteredTransactions(filtered);
   }, [searchTerm, selectFilter, transactionHistory]);
 
-  const openPage = () => {
-    setAdd(true);
+  const openPage = () => setAdd(true);
+  const closePage = () => setAdd(false);
+  const openTransferModal = () => setTransferModal(true);
+  const closeTransferModal = () => setTransferModal(false);
+  const openDeleteModal = (transactionReference) => {
+    setTransactionToDelete(transactionReference);
+    setDeleteModal(true);
   };
-  const closePage = () => {
-    setAdd(false);
-  };
-  const openTransferModal = () => {
-    setTransferModal(true);
-  };
-  const closeTransferModal = () => {
-    setTransferModal(false);
+  const closeDeleteModal = () => {
+    setDeleteModal(false);
+    setTransactionToDelete(null);
   };
 
   const handleCopy = () => {
@@ -71,40 +74,8 @@ function Transaction() {
     }
   };
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSelectFilter = (e) => {
-    setSelectFilter(e.target.value);
-  };
-
-  const handleDeleteTransaction = async (transactionReference) => {
-    // Update the local state and Redux store
-    const updatedTransactions = transactionHistory.filter(transaction => transaction.reference !== transactionReference);
-    setTransactionHistory(updatedTransactions);
-    setFilteredTransactions(updatedTransactions);
-    toast.success("Transaction deleted successfully.");
-
-    if (activeUser) {
-      const updatedUser = {
-        ...activeUser,
-        transactionHisotry: updatedTransactions
-      };
-
-      // Dispatch the action to update the Redux store
-      dispatch(removeTransactionFromHistory({ reference: transactionReference }));
-
-      try {
-        // Update the user on the local JSON server
-        await axios.put(`http://localhost:5000/users/${activeUser.id}`, updatedUser);
-        // Optionally, dispatch an action to update the user data in the store
-        dispatch(updateUser(updatedUser));
-      } catch (error) {
-        console.error('Failed to update the user on the server:', error);
-      }
-    }
-  };
+  const handleSearchChange = (e) => setSearchTerm(e.target.value);
+  const handleSelectFilter = (e) => setSelectFilter(e.target.value);
 
   return (
     <>
@@ -184,19 +155,19 @@ function Transaction() {
                 <tbody className="table-body">
                   {filteredTransactions.length > 0 ? (
                     filteredTransactions.map((transaction, index) => (
-                      <tr key={index}>
+                      <tr className="table-tr" key={index}>
                         <td className="reference">{transaction.reference}</td>
                         <td>{transaction.amount > 0 ? `+NGN ${transaction.amount}` : `-NGN ${Math.abs(transaction.amount)}`}</td>
                         <td className="date">{transaction.date}</td>
                         <td>{transaction.type}</td>
-                        <td><span className={transaction.status === "Success" ? "success-text" : "fail-text"}>{transaction.status}</span></td>
+                        <td><span className={transaction.status === "Success" ? "success-text" : transaction.status === "Failed" ? "fail-text" : "pending-text"}>{transaction.status}</span></td>
                         <td className="action-icon">
-                          <img src={Edit} alt="Edit" />
+                          <img src={Edit} alt="Edit" className="edit" />
                           <HiOutlineTrash 
                             className="trash" 
                             size={20} 
                             color="red" 
-                            onClick={() => handleDeleteTransaction(transaction.reference)}
+                            onClick={() => openDeleteModal(transaction.reference)}
                           />
                         </td>
                       </tr>
@@ -215,6 +186,11 @@ function Transaction() {
       
       <AddTransaction isOpen={add} closePage={closePage} />
       <TransferModal isOpen={transferModal} closeTransferModal={closeTransferModal} />
+      <DeleteModal 
+        isOpen={deleteModal}  
+        closeDeleteModal={closeDeleteModal} 
+        transactionReference={transactionToDelete} 
+      />
     </>
   );
 }
