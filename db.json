@@ -17,7 +17,7 @@
       "lastName": "james",
       "password": "eerger",
       "accountNumber": "70972142",
-      "balance": 906300,
+      "balance": 904300,
       "transactionHisotry": [
         {
           "reference": "k8rvdf199",
@@ -151,6 +151,21 @@
           "status": "Success",
           "type": "Debit",
           "recipient": "ola peter"
+        },
+        {
+          "reference": "rm5shboeu",
+          "amount": -1000,
+          "date": "8/28/2024, 8:18:26 PM",
+          "status": "Success",
+          "type": "Debit",
+          "recipient": "doofan matilda"
+        },
+        {
+          "reference": "xdpbg5uqv",
+          "amount": -1000,
+          "date": "8/28/2024, 8:45:55 PM",
+          "status": "Success",
+          "type": "Debit"
         }
       ]
     },
@@ -284,7 +299,7 @@
       "lastName": "matilda",
       "password": "Dootilda221",
       "accountNumber": "85742683",
-      "balance": 4000,
+      "balance": 5000,
       "transactionHisotry": [
         {
           "reference": "z6s8pjit6",
@@ -293,6 +308,14 @@
           "status": "Success",
           "type": "Debit",
           "recipient": "john mark"
+        },
+        {
+          "reference": "9li2zs4m0",
+          "amount": 1000,
+          "date": "8/28/2024, 8:18:26 PM",
+          "status": "Success",
+          "type": "Credit",
+          "sender": "toba james"
         }
       ]
     }
