@@ -4,7 +4,7 @@ import { logout } from '../../redux/userReducer';
 import { Link, useNavigate } from "react-router-dom";
 import file from "../../assets/image/file-text.png";
 import piggy from "../../assets/image/piggy-bank.png";
-import user from "../../assets/image/vector.png";
+import user from "../../assets/image/Vector.png";
 import rocket from "../../assets/image/rocket.png";
 import settings from "../../assets/image/settings.png"
 import smartphone from "../../assets/image/smartphone.png"
@@ -46,7 +46,6 @@ function SideNav() {
         <Link to="/seting"><li><img src={settings} alt="" /> <h3>Settings</h3></li></Link>
         <li onClick={LogOut}><TbLogout size={15} />  <h3>Logout</h3></li>
       </ul>
-      {/* <span className="nav-logout-wrap" onClick={LogOut}><TbLogout size={15} /> <h3>Logout</h3></span> */}
 
 
     </div>
