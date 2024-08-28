@@ -4,7 +4,7 @@ import { logout } from '../../redux/userReducer';
 import { Link, useNavigate } from "react-router-dom";
 import file from "../../assets/image/file-text.png";
 import piggy from "../../assets/image/piggy-bank.png";
-import user from "../../assets/image/Vector.png";
+// import user from "../../assets/image/Vector.png";
 import rocket from "../../assets/image/rocket.png";
 import settings from "../../assets/image/settings.png"
 import smartphone from "../../assets/image/smartphone.png"
@@ -12,6 +12,7 @@ import pie from "../../assets/image/pie-chart.png"
 import arrowleftright from "../../assets/image/arrow-left-right.png"
 import archive from "../../assets/image/archive.png"
 import { TbLogout } from "react-icons/tb";
+import { HiOutlineUsers } from "react-icons/hi";
 
 function SideNav() {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ function SideNav() {
       </div>
       <ul>
       <Link to="./dash"><li><img src={rocket} alt="" /> <h3>Overview</h3></li></Link>
-        <Link to="./user"><li><img src={user} alt="" /> <h3>User</h3></li></Link>
+        <Link to="./user"><li><HiOutlineUsers /> <h3>User</h3></li></Link>
         <Link to="/dash"><li><img src={file} alt="" /> <h3>Transaction</h3></li></Link>
         <Link to="/card"><li><img src={arrowleftright} alt="" /> <h3>Card</h3></li></Link>
         <Link to="/bank"><li><img src={archive} alt="" /> <h3>Bank Service</h3></li></Link>
