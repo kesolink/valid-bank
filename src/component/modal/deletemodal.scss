@@ -1,0 +1,41 @@
+.delete-wrap{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    .action-text{
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 3px;
+    }
+    h2{
+        padding-top: 30px;
+    }
+    p{
+        font-size: 14px;
+        margin-bottom: 20px;
+        // margin: 10px 0px;
+    }
+}
+.delete-btn-wrap{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    .btn-delete{
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+
+    }
+    .btn-mistake{
+        background-color: #E3E3E3;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+
+    }
+}

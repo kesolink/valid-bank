@@ -21,7 +21,11 @@
  
   
  
-  
+  .active-link{
+    padding: 3px 5px;
+    color: #fff;
+    
+  }
 
   .links {
     display: flex;
@@ -45,6 +49,7 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 500ms;
     color: white;
+    padding: 0px 20px;
     @include respond(desktop) {
       display: none;
     }
@@ -53,7 +58,7 @@
     }
 
     ul {
-      padding: 1rem /* 16px */;
+      // padding: 1rem /* 16px */;
       color: white;
       flex-direction: column;
       margin-top: 40px;
@@ -65,8 +70,8 @@
      padding: 10px 10px;
      &:hover {
         border-radius: 8px;
-        background-color: #7000F6; /* Lightens the background on hover */
-        color:#fff; /* Changes the text color on hover */
+        background-color: #f2f2f2; /* Lightens the background on hover */
+        color:black; /* Changes the text color on hover */
         cursor: pointer; /* Changes the cursor to indicate interactivity */
       }
     }
@@ -76,12 +81,18 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
   }
   .nav-logout-wrap{
     display: flex;
+    justify-content: center;
      align-items: center;
      gap: 5px;
      padding: 10px 10px;
+     background-color: #f4f4f4;
+     margin-bottom: 30px;
+     border-radius: 8px;
+     color: black;
   }
  
  

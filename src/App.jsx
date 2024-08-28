@@ -9,7 +9,14 @@ import ProtectedRoute from "./Protected-routes/ProtectedRoutes";
 import { useSelector } from "react-redux";
 import Transaction from "./pages/Transaction";
 import User from "./pages/User";
-// import Backend from "./pages/Backend";
+import Billing from "./pages/Billing";
+import Settings from "./pages/Settings";
+import Report from "./pages/Report";
+import Saving from "./pages/Saving";
+import TransferModal from "./component/modal/TransferModal";
+import Card from "./pages/Card";
+import Bankservice from "./pages/Bankservice";
+
 
 function App() {
   const isAuthenticated = useSelector(state => state.user.isAuthenticated);
@@ -29,7 +36,13 @@ function App() {
             <Route element={<ProtectedRoute />}>
              <Route path="/dash" element={<Transaction />} />
              <Route path="/user" element={<User />} />
-             {/* <Route path="/backend" element={<Backend />} /> */}
+             <Route path="/billing" element={<Billing />} />
+             <Route path="/saving" element={<Saving />} />
+             <Route path="/settings" element={<Settings />} />
+             <Route path="/report" element={<Report />} />
+             <Route path="/card" element={<Card />} />
+             <Route path="/bank" element={<Bankservice />} />
+             <Route path="/transfer" element={<TransferModal />} />
             </Route>
           </Routes>
         </div>

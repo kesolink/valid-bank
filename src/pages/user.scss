@@ -1,37 +1,48 @@
 @import "../mixins.scss";
-table {
-    width: 100%;
-    border-collapse: collapse;
-    padding: 0px 30px;
 
+.user-container{
+  padding: 30px 70px;
+  @include respond(phone) {
+    padding: 30px 10px;
   }
-  thead{
-    background-color: #F9FAFB;
-  }  
-th,td {
-    padding: 8px;
-    text-align: left;
-    padding-left: 26px;
-    padding-right: 26px;
-    // @include respond(phone) {
-    //   padding-left: 7px;
-    //   padding-right: 7px;
-    // }
+  h2{
+    text-align: center;
+    margin-bottom: 30px;
   }
-  
-th {
-    font-weight: bold;
-    @include respond(phone) {
-      font-size: 12px;
-    }
+}
+.user-details-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details-header,
+.user-details-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+}
+
+.user-details-header {
+  background-color: #f2f2f2;
+}
+
+.user-details-row {
+  font-weight: normal;
+  &:nth-child(odd) {
+    background-color: #f9f9f9;
   }
-tbody{
-    @include respond(phone) {
-      font-size: 12px;
-    }
-  }
-td{
-    border-right: 2px solid #F9FAFB;
-    border-bottom: 2px solid #F9FAFB;
-    font-size: 14px;
-  }
+}
+
+.no-account {
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.acc-num-copy-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

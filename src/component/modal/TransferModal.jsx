@@ -139,7 +139,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
   return (
     <div className={`fadded-container modal-overlay ${isOpen ? 'open' : ''}`}>
       <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={closeTransferModal}></div>
-      <div className="modal animate-slide-in animate-slide-in-mobile">
+      <div className="modal slide-up">
         <span className="close-btn" onClick={closeTransferModal}>X</span>
         <h2>Transfer</h2>
         <p>Send to bank account</p>
