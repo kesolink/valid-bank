@@ -171,7 +171,7 @@ table {
   
   .table-wrap{
     margin-top: 20px;
-    max-height: 350px; 
+    max-height: 300px; 
     overflow-y: auto;
     @include respond(phone) {
       max-height: 310px; 
