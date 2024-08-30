@@ -52,7 +52,7 @@ function AddTransaction({ isOpen, closePage }) {
 
     try {
       // Find the user in the JSON server by ID
-      const userResponse = await axios.get(`http://localhost:5000/users/${activeUser.id}`);
+      const userResponse = await axios.get(`https://validbank-data.onrender.com/users/${activeUser.id}`);
       const user = userResponse.data;
 
       // Add the new transaction to the user's transaction history
@@ -65,7 +65,7 @@ function AddTransaction({ isOpen, closePage }) {
         transactionHisotry: updatedTransactionHistory
       };
 
-      await axios.put(`http://localhost:5000/users/${activeUser.id}`, updatedUser);
+      await axios.put(`https://validbank-data.onrender.com/users/${activeUser.id}`, updatedUser);
 
       // Dispatch the action to add the transaction to the Redux store and update the balance
       dispatch(addTransactionToHistory({
