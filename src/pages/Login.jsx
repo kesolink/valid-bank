@@ -1,23 +1,25 @@
 import { useState } from "react";
 import "./login.scss";
-import { FaSquareArrowUpRight } from "react-icons/fa6";
+import { FaSquareArrowUpRight, FaEye, FaEyeSlash } from "react-icons/fa6"; // Import eye icons
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { loginSuccess } from '../redux/userReducer';
-import Logo from "../assets/image/Group 3.png"
+import Logo from "../assets/image/Group 3.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
     const dispatch = useDispatch();
-    // Access `user` state directly
     const authenticated = useSelector((state) => state.user.isAuthenticated);
     const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
-    console.log(authenticated)
+
+    const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -37,8 +39,7 @@ function Login() {
                 if (user) {
                     navigate("/dash");
                     dispatch(loginSuccess({ user })); // Dispatch with user data
-                     // Redirect to the dashboard on successful login
-                     toast.success('Login successful!');
+                    toast.success('Login successful!');
                 } else {
                     alert('Invalid credentials.');
                 }
@@ -47,6 +48,10 @@ function Login() {
                 console.error('Error:', error);
                 alert('Login failed. Please try again later.');
             });
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -64,38 +69,42 @@ function Login() {
                     <img src={Logo} alt="" />
                 </div>
                 <div className="login-wrapper">
-                <form className="login-content-wrap" onSubmit={handleSubmit}>
-                    <h1>Sign In</h1>
-                    <div className="login-email-wrap">
-                        <label>Email Address*</label>
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder="Enter email address"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="login-password-wrap">
-                        <label>Password*</label>
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Enter Password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-
-                    <button type="submit" className="login-btn">
-                        Sign In
-                    </button>
-                    <div className="login-register-wrap">
-                        <h4>Don't have an account?</h4> <Link to={"/register"}> <span>Register</span></Link>
-                    </div>
-                </form>
+                    <form className="login-content-wrap" onSubmit={handleSubmit}>
+                        <h1>Sign In</h1>
+                        <div className="login-email-wrap">
+                            <label>Email Address*</label>
+                            <input
+                                type="text"
+                                name="email"
+                                placeholder="Enter email address"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="login-password-wrap">
+                            <label>Password*</label>
+                            <div className="password-input-wrap">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    placeholder="Enter Password"
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </span>
+                            </div>
+                        </div>
+                        <button type="submit" className="login-btn">
+                            Sign In
+                        </button>
+                        <div className="login-register-wrap">
+                            <h4>Don't have an account?</h4> <Link to={"/register"}> <span>Register</span></Link>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

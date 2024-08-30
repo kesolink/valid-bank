@@ -4,6 +4,7 @@ import { useState } from "react";
 import { updateUserBalance, addTransactionToHistory } from '../../redux/userReducer';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AiOutlineClose } from "react-icons/ai";
 
 function TransferModal({ isOpen, closeTransferModal }) {
   const activeUser = useSelector((state) => state.user.activeUser);
@@ -140,7 +141,8 @@ function TransferModal({ isOpen, closeTransferModal }) {
     <div className={`fadded-container modal-overlay ${isOpen ? 'open' : ''}`}>
       <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={closeTransferModal}></div>
       <div className="modal slide-up">
-        <span className="close-btn" onClick={closeTransferModal}>X</span>
+        {/* <span className="close-btn" onClick={closeTransferModal}>X</span> */}
+        <AiOutlineClose className="close-btns" onClick={closeTransferModal} />
         <h2>Transfer</h2>
         <p>Send to bank account</p>
         <form className='transfer-form-wrap' onSubmit={handleTransfer}>

@@ -34,7 +34,7 @@
     }
     
 }
-.close-btn{
+.close-add-btn{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -44,6 +44,13 @@
     text-align: center;
     align-items: center;
     margin-bottom: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    @include respond(phone) {
+        width: 30px;
+    height: 30px;
+      }
 }
 .select-wrap{
     display: flex;

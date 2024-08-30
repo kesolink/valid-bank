@@ -95,7 +95,7 @@ function AddTransaction({ isOpen, closePage }) {
     <div className={`add-tran-layer ${isOpen ? "open" : ""}`}>
       <form className="add-tran-wrap" onSubmit={handleAddNewTransaction}>
         <div className="">
-          <div className="close-btn" onClick={closePage}>
+          <div className="close-add-btn" onClick={closePage}>
             <IoClose />
           </div>
           <h2>Add New Transaction</h2>

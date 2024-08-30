@@ -35,10 +35,21 @@
       width: 100%;
       border-radius: 25px 25px 0px 0px;
     }
+    h2{
+      @include respond(phone) {
+        font-size: 20px ;
+      }
+    }
+    p{
+      @include respond(phone) {
+        font-size: 14px ;
+      }
+    }
   }
 
   
-  .close-btn {
+  .close-btns {
+    width: 20px;
     position: absolute;
     top: 20px;
     right: 20px;
