@@ -1,4 +1,6 @@
 @import "../mixins.scss";
+@import "react-toastify/dist/ReactToastify.css";
+
 .login-container {
   display: flex;
   height: 100vh;
@@ -50,6 +52,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include respond(phone) {
+    height: 90%;
+  }
 }
 .login-content-wrap {
   h1 {
@@ -135,3 +140,49 @@
 
 
 // --tg-primary-purple-color
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+      flex: 1;
+      padding-right: 2rem; // Adjust this to make space for the icon
+  }
+
+  .password-toggle-icon {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+      color: #888; // Adjust the color as needed
+
+      &:hover {
+          color: #333;
+      }
+  }
+}
+
+
+.Toastify__toast {
+  width: 100%;
+  max-width: 320px; // Default max width
+  font-size: 16px;
+  min-height: 48px; // Set a minimum height
+
+  @include respond(phone) {
+    max-width: 90%; // Adjust width for phone screens
+    min-height: 200px; // Adjust min-height for phone screens
+    padding: 8px 16px; // Adjust padding for phone screens to control height
+    font-size: 14px; // Adjust font size for phone screens
+    border-radius: 20px;
+  }
+}
+
+.Toastify__toast-body {
+  font-size: inherit; // Use the parent font size
+}
+
+.Toastify__close-button {
+  font-size: 14px; // Adjust close button size
+}
+

@@ -114,6 +114,10 @@ function Transaction() {
             <span>Account Number: {activeUser ? activeUser.accountNumber : "Loading..."}</span>
             <FaRegCopy className="copy" size={15} onClick={handleCopy} style={{ cursor: 'pointer' }} />
           </div>
+          <div className="copy-acct-num-wrap-phone">
+            <span>Account Number </span>
+            <div className="acct-num-down"> <span>{activeUser ? activeUser.accountNumber : "Loading..."}</span><FaRegCopy className="copy" size={15} onClick={handleCopy} style={{ cursor: 'pointer' }} /></div> 
+          </div>
           {copySuccess && <span className="copy-success">{copySuccess}</span>}
         </div>
 

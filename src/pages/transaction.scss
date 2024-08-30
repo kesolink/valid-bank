@@ -18,10 +18,16 @@
 .tran-header-text-wrap{
     h4{
         font-size: 30px;
+        @include respond(sm-phone) {
+          font-size: 25px;
+        }
         
     }
     p{
         color: #7F7D83;
+        @include respond(sm-phone) {
+          font-size: 14.5px;
+        }
     }
 }
 .add-tran-btn-wrap{
@@ -67,10 +73,18 @@
     h3{
         margin-bottom: 15px;
         font-size: 20px;
+        @include respond(sm-phone) {
+          font-size: 18px;
+          // font-weight: bold;
+        }
     }
     span{
         font-size: 40px;
         font-weight: 600;
+        @include respond(sm-phone) {
+          font-size: 25px;
+          font-weight: bold;
+        }
     }
     p{
         font-size: 16px;
@@ -90,15 +104,41 @@
     background-color: var(--tg-primary-purple-color);
     color: #fff;
     font-size: 18px;
+    @include respond(phone) {
+      font-size: 14.5px;
+    }
   }
 }
 .copy-acct-num-wrap{
   display: flex;
   align-items: center;
   gap: 3px;
+  @include respond(phone) {
+    display: none;
+    
+  }
   span{
     font-weight: 600;
   }
+}
+.copy-acct-num-wrap-phone{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 14.5px;
+  @include respond(desktop) {
+    display: none;
+  }
+  @include respond(phone) {
+    display: block;
+  }
+  span{
+    font-weight: 600;
+  }
+}
+.acct-num-down{
+  display: flex;
+  gap: 10px;
 }
 .copy{
   color: var(--tg-primary-purple-color);
@@ -107,7 +147,13 @@
 .sort-wrap{
     display: flex;
     justify-content: space-between;
-    padding: 30px 0px;
+    padding: 10px 0px;
+    @include respond(phone) {
+      padding: 8px 0px;
+    }
+    @include respond(sm-phone) {
+      padding: 0px 0px;
+    }
     input{
         width: 300px;
       height:35px ;
@@ -171,6 +217,11 @@ table {
     max-height: 300px; 
     overflow-y: auto;
     @include respond(phone) {
+      max-height: 310px; 
+      // aspect-ratio: 1 / 1;
+
+    }
+    @include respond(sm-phone) {
       max-height: 310px; 
 
     }
