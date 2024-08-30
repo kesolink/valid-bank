@@ -10,6 +10,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
   const activeUser = useSelector((state) => state.user.activeUser);
   const dispatch = useDispatch();
   const [error, setError] = useState("")
+  const [lowFundError, setLowFundError] = useState("")
   
   const [formData, setFormData] = useState({
     amount: '',
@@ -59,8 +60,10 @@ function TransferModal({ isOpen, closeTransferModal }) {
     const transferAmount = parseFloat(formData.amount);
 
     if (transferAmount > activeUser.balance) {
-      alert("Insufficient funds");
+      setLowFundError("Insufficient funds");
       return;
+    }else{
+      setLowFundError("");
     }
 
     fetch('https://validbank-data.onrender.com/users')
@@ -124,11 +127,12 @@ function TransferModal({ isOpen, closeTransferModal }) {
               accountNumber: ''
             });
             closeTransferModal();
+
           }).catch(error => {
             console.error('Error updating recipient transaction:', error);
           });
         } else {
-          alert('Recipient not found.');
+          toast.error('Recipient not found.');
         }
       })
       .catch((error) => {
@@ -178,6 +182,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
               <h3>Available Balance:</h3>
               <span>{activeUser.balance}</span>
             </div>
+            {lowFundError && (<div style={{ color: "red"}}>{lowFundError}</div>)}
           </div>
           <button type="submit">Send</button>
         </form>

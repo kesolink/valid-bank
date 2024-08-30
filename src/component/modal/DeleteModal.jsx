@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { removeTransactionFromHistory, updateUser } from '../../redux/userReducer';
+import { AiOutlineClose } from 'react-icons/ai';
 
 
 function DeleteModal({ isOpen, closeDeleteModal, transactionReference }) {
@@ -40,7 +41,8 @@ function DeleteModal({ isOpen, closeDeleteModal, transactionReference }) {
         <div className={`fadded-container modal-overlay ${isOpen ? 'open' : ''}`}>
             <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={closeDeleteModal}></div>
             <div className="modal slide-up">
-                <span className="close-btn" onClick={closeDeleteModal}>X</span>
+                {/* <span className="close-btn" onClick={closeDeleteModal}>X</span> */}
+                <AiOutlineClose className="close-btns" onClick={closeDeleteModal} />
                 <div className="delete-wrap">
                 <h2>Delete Transaction</h2>
                 <p className='action-text'>Are you sure you want to delete this transaction?</p>

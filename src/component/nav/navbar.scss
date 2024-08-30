@@ -13,19 +13,19 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  @include respond(phone) {
+  // @include respond(phone) {
  
-  }
+  // }
 
   }
  
   
  
-  // .active-link{
-  //   padding: 3px 5px;
-  //   color: #fff;
+  .active-link{
+    padding: 3px 5px;
+    color: #fff;
     
-  // }
+  }
 
   .links {
     display: flex;
@@ -67,7 +67,7 @@
      display: flex;
      align-items: center;
      gap: 5px;
-     padding: 1px 10px;
+     padding: 0px 10px;
      h3{
       @include respond(phone) {
         font-size: 16px;
@@ -160,6 +160,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    display: none;
     img{
         width: 30px;
         height: 30px;
