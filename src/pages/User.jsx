@@ -10,7 +10,7 @@ function User() {
     const [userDetails, setUserDetails] = useState([])
 
     const getUseData =  async ()=>{
-        const response = await axios.get('http://localhost:5000/users')
+        const response = await axios.get('https://validbank-data.onrender.com/users')
         const user = response.data
         console.log(user )
         const newData = user.map(({firstName, lastName, accountNumber})=>({firstName, lastName, accountNumber}))

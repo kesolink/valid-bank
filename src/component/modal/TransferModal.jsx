@@ -35,7 +35,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
   };
 
   const fetchUserDetails = (accountNumber) => {
-    fetch('http://localhost:5000/users')
+    fetch('https://validbank-data.onrender.com/users')
       .then((response) => response.json())
       .then((data) => {
         const user = Array.isArray(data) && data.find(user => user.accountNumber === accountNumber);
@@ -62,7 +62,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
       return;
     }
 
-    fetch('http://localhost:5000/users')
+    fetch('https://validbank-data.onrender.com/users')
       .then((response) => response.json())
       .then((data) => {
         const recipient = data.find(user => user.accountNumber === formData.accountNumber);
@@ -94,7 +94,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
           };
 
           // Update sender's transaction history on the server and Redux
-          fetch(`http://localhost:5000/users/${activeUser.id}`, {
+          fetch(`https://validbank-data.onrender.com/users/${activeUser.id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -108,7 +108,7 @@ function TransferModal({ isOpen, closeTransferModal }) {
           });
 
           // Update recipient's balance and transaction history on the server and Redux
-          fetch(`http://localhost:5000/users/${recipient.id}`, {
+          fetch(`https://validbank-data.onrender.com/users/${recipient.id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

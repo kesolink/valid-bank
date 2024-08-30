@@ -26,7 +26,7 @@ function DeleteModal({ isOpen, closeDeleteModal, transactionReference }) {
 
             try {
                 // Update the user on the local JSON server
-                await axios.put(`http://localhost:5000/users/${activeUser.id}`, updatedUser);
+                await axios.put(`https://validbank-data.onrender.com/users/${activeUser.id}`, updatedUser);
                 // Optionally, dispatch an action to update the user data in the store
                 dispatch(updateUser(updatedUser));
                 closeDeleteModal();
