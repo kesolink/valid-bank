@@ -12,7 +12,6 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../redux/userReducer";
 import file from "../../assets/image/file-text.png";
 import piggy from "../../assets/image/piggy-bank.png";
-import user from "../../assets/image/vector.png";
 import rocket from "../../assets/image/rocket.png";
 import settings from "../../assets/image/settings.png"
 import smartphone from "../../assets/image/smartphone.png"
@@ -20,6 +19,7 @@ import pie from "../../assets/image/pie-chart.png"
 import arrowleftright from "../../assets/image/arrow-left-right.png"
 import archive from "../../assets/image/archive.png"
 import { TbLogout } from "react-icons/tb";
+import { HiOutlineUsers } from "react-icons/hi";
 
 function Navbar() {
   const [nav, setNav] = useState(true)
@@ -57,7 +57,7 @@ function Navbar() {
       <div className="wrap-nav-link">
         <ul>
         <NavLink to="/dash" className="active-link" onClick={handleNav}><li><img src={rocket} alt="" /> <h3>Overview</h3></li></NavLink>
-        <NavLink to="/user" className="active-link" onClick={handleNav}><li><img src={user} alt="" /> <h3>User</h3></li></NavLink>
+        <NavLink to="/user" className="active-link" onClick={handleNav}><li><HiOutlineUsers size={18} /> <h3>User</h3></li></NavLink>
         <NavLink to="/dash" className="active-link" onClick={handleNav}><li><img src={file} alt="" /> <h3>Transaction</h3></li></NavLink>
         <NavLink to="/card" className="active-link" onClick={handleNav}><li><img src={arrowleftright} alt="" /> <h3>Card</h3></li></NavLink>
         <NavLink to="/bank" className="active-link" onClick={handleNav}><li><img src={archive} alt="" /> <h3>Bank Service</h3></li></NavLink>
