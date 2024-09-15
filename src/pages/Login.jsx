@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./login.scss";
 import { FaSquareArrowUpRight, FaEye, FaEyeSlash } from "react-icons/fa6"; // Import eye icons
 import { Link, useNavigate } from "react-router-dom";
@@ -12,6 +12,11 @@ function Login() {
     const dispatch = useDispatch();
     const authenticated = useSelector((state) => state.user.isAuthenticated);
     const navigate = useNavigate();
+    useEffect(()=>{
+        if(authenticated){
+            navigate("/dash")
+        }
+    },[])
 
     const [formData, setFormData] = useState({
         email: '',
